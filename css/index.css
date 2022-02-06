@@ -1,0 +1,26 @@
+body{
+    background-color: #E0DDD6;
+}
+
+
+.tituloSuperior{
+    font-family: FranklinGotItcTEEBooCom;
+    /* font-family: CaviarDreams; */
+    /* font-family: MisterSinatra; */
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    line-height: 1.3em;
+    font-size: 2rem;
+}
+
+/* .barraNavegacionLink{
+    font-family: MisterSinatra;
+    font-weight: 400;
+    font-style: bold;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    line-height: 2.5em;
+    font-size: 1rem;
+} */
