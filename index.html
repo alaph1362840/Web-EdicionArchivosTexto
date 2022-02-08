@@ -61,7 +61,7 @@
 				<input id="archivo" class="form-control col-12" type="file" name="archivo" data-bs-toggle="tooltip" data-bs-placement="top" title="Debe ser un archivo de texto, extension .txt">
 			</div>
             <div class="form-group col-lg-2 ms-auto p-0">
-                <button class="btn btn-secondary ms-lg-auto mx-sm-auto d-block col-12"><i class="far fa-file-alt"></i> Guardar</button>
+                <button id="btnGuardarArchivo" class="btn btn-secondary ms-lg-auto mx-sm-auto d-block col-12"><i class="far fa-file-alt"></i> Guardar</button>
             </div>
 		</div>
         <!-- FILA 02 TEXT AREA  CON EL CONTENIDO DEL ARCHIVO -->
@@ -95,7 +95,10 @@
                             <p class="mt-0 mb-0">Por cada linea del archivo se ingresara la frase a buscar y la frase que la reemplazara separadas por un signo(separador) que tu elegiras. Ejemplo:</p>
                             <p class="mt-0 mb-0">&nbsp &nbsp fraseOriginal -- fraseReemplazo</p>
                             <p class="mt-0 mb-0">&nbsp &nbsp fraseOriginal -- fraseReemplazo</p>
-                            <p class="mt-0">//en este caso el separador son dos guiones --, y  las frases pueden ser cualquier tipo de texto.</p> 
+                            <p class="mt-0 mb-0">//en este caso el separador son dos guiones --, y  las frases pueden ser cualquier tipo de texto.</p>
+                            <p class="mt-0 mb-0">//Si lo que deseas es elimnar una frase del texto, simplemente deja en blanco la frase de reemplazo e incluso puedes omitir el separador Ejemplo:</p>
+                            <p class="mt-0 mb-0">&nbsp &nbsp fraseOriginal</p>
+                            <p class="mt-0">//Lo anterior eliminara la fraseOriginal del texto</p>                              
                         </div>                         
                     </div>
                 </div>
@@ -149,8 +152,9 @@
 
 	<!-- LIBRERIAS JS -->
 	<script src="librerias/jquery-3.6.0.min.js"></script>
-    <script src="librerias/popper.min.js"></script>
+    <script src="librerias/popper/popper.min.js"></script>
 	<script src="librerias/bootstrap-5.1.3/js/bootstrap.min.js"></script>
+    <script src="librerias/FileSaver/FileSaver.min.js"></script>
 	<script type="text/javascript" src="index.js"></script>
 </body>
 </html>
