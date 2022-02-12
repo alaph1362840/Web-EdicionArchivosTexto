@@ -106,7 +106,7 @@
             <div class="col-lg-6 mt-md-0 mt-sm-1 pe-lg-0">
                 <div class="card">
                     <div class="card-header">
-                        Convertir numeros a letras.
+                        Convertir numeros en base 10 (decimales) a letras.
                     </div>
                     <div class="card-body">
                         <div class="form-group">
@@ -117,6 +117,16 @@
                             </select>
                             <div id="separadorDecimalHelp" class="form-text">Ejemplo: 156.09 o 156,09</div>
                         </div>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="switchNDecimales">
+                            <label class="form-check-label" for="switchNDecimales">Nombrar decimales segun su posicion.</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="switchMaysucula">
+                            <label class="form-check-label" for="switchMaysucula">Usar letras mayusculas.</label>
+                        </div>
+
                         <div class="row form-group ms-1 me-1 mt-1">
                             <button id="btnConvertirNumeros" class="btn btn-success col-lg-5"><i class="fas fa-sync-alt"></i> Convertir numeros</button>
                             <div class="col-2"></div>
@@ -125,6 +135,7 @@
                         <div id="ayudaCN" class="border border-1 border-secondary p-1 mt-1">
                             <p class="mb-0">Se cambiaran los numeros por su representacion en letras. Ejemplo:</p>
                             <p class="mt-0">"1996" por "Mil novecientos noventa y seis"</p>
+                            <p class="mt-0">Nombrar decimales segun su posicion: Se agrega una palabra al final segun el ultimo numero decimal Ejemplo: "4.005" seria "cuatro punto cero cero cinco milesimas" </p>
                         </div>                        
                     </div>
                 </div>
