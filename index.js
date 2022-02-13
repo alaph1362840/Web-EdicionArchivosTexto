@@ -269,15 +269,18 @@ let cArchivo = new ArchivoTxt($("#txtArchivo").val());
 
 //-- CARGAR EL TEXTO DEL ARCHIVO EN EL TEXT AREA
 function cargarArchivo(e) {
-    //e.preventDefault();
+    //crea archivo 
     let file = e.target.files[0];
+    //obtener el nombre del archivo subido
     let path = e.target.value;
-    console.log(path);
     let exrRuta = /[A-Za-z0-9_ -]+\.[A-Za-z0-9]+\b(?!\\|\/)/;
     let nombreArchivo = exrRuta.exec(path)[0];    
     if (path.includes(".txt")) {
         if (file) { //este if verifica que el archivo exista
+            //---LECTURA DE ARCHIVO---
             let reader = new FileReader();
+            let codi = $("#codificacion").val();
+            reader.readAsText(file, codi);
             reader.onload = function (e) {
                 let texto = e.target.result;  
                 textoArchivo = texto;
@@ -287,10 +290,10 @@ function cargarArchivo(e) {
             }
             reader.readAsText(file);            
         } else {
-            alert('¡He dicho archivo de texto!');
+            alertify.error('Debes seleccionar un archivo de texto para trabajar.');
         }
     } else {
-        alert('¡Por favor ingrese un archivo de texto .txt para continuar!'); 
+        alertify.error('Debes seleccionar un archivo de texto para trabajar.');
     }       
 }
 var archivo = document.getElementById("archivo");
@@ -315,7 +318,7 @@ function cargarArchivoReemplazos(e) {
             }
             reader.readAsText(file);            
         } else {
-            alert('¡He dicho archivo de texto!');
+            alertify.error('Debes seleccionar un archivo de texto para trabajar.');
         }
     } else {
         alert('¡Por favor ingrese un archivo de texto .txt para continuar!'); 
