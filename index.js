@@ -56,7 +56,7 @@ class ArchivoTxt{
             sepDecimal = ',';
             sepMiles = '\\.';
         }
-        var cadenaExr = "(?<=\\s)(([0-9]+"+sepMiles+"[0-9]+)+|[0-9]+)((?=\\s)|"+sepDecimal+"[0-9]+(?=\\s)|"+sepDecimal+"[0-9]+(?=\\.\\s)|(?=\\.\\s))";
+        var cadenaExr = "(?<=\\s|^)(([0-9]+"+sepMiles+"[0-9]+)+|[0-9]+)("+sepDecimal+"[0-9]+(?=\\s|$)|"+sepDecimal+"[0-9]+(?=\\.(\\s|$))|(?=\\.(\\s|$))|(?=\\s)|(?=$))";
         console.log(cadenaExr);
         var expNumero = new RegExp(cadenaExr,'g');        
         this.texto = this.texto.replace(expNumero, (coincidencia, indice, cadena)=>{
@@ -257,8 +257,10 @@ class ArchivoTxt{
             separador = " PUNTO ";
         } else {
             separador = " COMA ";
-        }    
-        letras = letras + separador + sCeros + this.obtnerLetrasEntero(pDecimal) + fraseDecimal;    
+        }
+        if (pDecimal!=""  && ndecimal>0) {
+            letras = letras + separador + sCeros + this.obtnerLetrasEntero(pDecimal) + fraseDecimal; 
+        }           
         return letras;
     }
 }
