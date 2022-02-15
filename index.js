@@ -330,27 +330,31 @@ archivoR.addEventListener("change", cargarArchivoReemplazos);
 // --- OCULTAR O MOSTRAR INFORMACION DE AYUDA
 $("#ayudaRM").hide();
 $("#ayudaCN").hide();
+let cOjoAbierto = "fa-eye";
+let cOjoCerrado = "fa-eye-slash";
+let instruccionRM= false;
+let instruccionCN= false;
 $("#btnInstruccionRM").click(function () { 
-    let t = `<i class="far fa-eye"></i> Explicacion`;
-    let f = `<i class="far fa-eye-slash"></i> Explicacion`;    
-    if ($(this).html() == f) {
-        $(this).html(t);
-        $("#ayudaRM").show();
-    } else {
-        $(this).html(f);
+    if (instruccionRM) {
         $("#ayudaRM").hide();
-    }    
+        instruccionRM=false;
+    } else {
+        $("#ayudaRM").show();
+        instruccionRM=true;
+    }
+    $("#eyeRM").toggleClass(cOjoAbierto);
+    $("#eyeRM").toggleClass(cOjoCerrado);    
 });
 $("#btnInstruccionCN").click(function () { 
-    let t = `<i class="far fa-eye"></i> Explicacion`;
-    let f = `<i class="far fa-eye-slash"></i> Explicacion`;    
-    if ($(this).html() == f) {
-        $(this).html(t);
-        $("#ayudaCN").show();
-    } else {
-        $(this).html(f);
+    if (instruccionCN) {
         $("#ayudaCN").hide();
-    }    
+        instruccionCN = false;
+    } else {
+        $("#ayudaCN").show();
+        instruccionCN = true;
+    }
+    $("#eyeCN").toggleClass(cOjoAbierto);
+    $("#eyeCN").toggleClass(cOjoCerrado);    
 });
 
 // ------ CORRECCION DE PUNTOS SIN ESPACIO -----
