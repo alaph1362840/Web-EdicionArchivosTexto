@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1140.854px" height="50.055px" viewBox="0 0 1140.854 50.055" enable-background="new 0 0 1140.854 50.055"
-	 xml:space="preserve">
-<g id="Fondo">
-	<rect y="0" fill="#FFFFFF" width="1140.854" height="25.027"/>
-	<rect y="25.027" fill="#FFFFFF" width="1140.854" height="25.027"/>
-</g>
-<g id="lineas">
-	<line fill="none" stroke="#333333" stroke-miterlimit="10" x1="8.49" y1="24.551" x2="1124.622" y2="24.551"/>
-	<line fill="none" stroke="#E60006" stroke-miterlimit="10" x1="72.842" y1="0" x2="72.842" y2="25.028"/>
-	<line fill="none" stroke="#333333" stroke-miterlimit="10" x1="8.49" y1="49.638" x2="1124.622" y2="49.638"/>
-	<line fill="none" stroke="#E60006" stroke-miterlimit="10" x1="72.842" y1="25.027" x2="72.842" y2="50.055"/>
-</g>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1319.8 50.1" style="enable-background:new 0 0 1319.8 50.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#333333;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#E60006;stroke-miterlimit:10;}
+	.st3{fill:#4D4D4D;}
+</style>
+<rect class="st0" width="1319.8" height="25"/>
+<rect y="25" class="st0" width="1319.8" height="25"/>
+<line class="st1" x1="9.8" y1="24.6" x2="1301" y2="24.6"/>
+<line class="st2" x1="72.8" y1="0" x2="72.8" y2="25"/>
+<line class="st1" x1="9.8" y1="49.6" x2="1301" y2="49.6"/>
+<line class="st2" x1="72.8" y1="25" x2="72.8" y2="50.1"/>
 <g id="Circulo">
-	<ellipse fill="none" stroke="#333333" stroke-miterlimit="10" cx="34.818" cy="12.536" rx="7.581" ry="7.486"/>
+	<ellipse class="st1" cx="34.8" cy="12.5" rx="7.6" ry="7.5"/>
 	<g>
-		<path fill="#4D4D4D" d="M37.946,5.903l-4.386,5.663l-2.761,6.812c-2.299-1.702-2.99-3.47-2.99-6.207
-			c0-3.943,3.144-6.352,6.573-6.813C35.398,5.22,37.075,5.472,37.946,5.903z"/>
+		<path class="st3" d="M37.9,5.9l-4.4,5.7l-2.8,6.8c-2.3-1.7-3-3.5-3-6.2c0-3.9,3.1-6.4,6.6-6.8C35.4,5.2,37.1,5.5,37.9,5.9z"/>
 	</g>
 </g>
 </svg>
