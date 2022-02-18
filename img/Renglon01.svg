@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1140.854px" height="50.055px" viewBox="0 0 1140.854 50.055" enable-background="new 0 0 1140.854 50.055"
+	 xml:space="preserve">
+<g id="Fondo">
+	<rect y="0" fill="#FFFFFF" width="1140.854" height="25.027"/>
+	<rect y="25.027" fill="#FFFFFF" width="1140.854" height="25.027"/>
+</g>
+<g id="lineas">
+	<line fill="none" stroke="#333333" stroke-miterlimit="10" x1="8.49" y1="24.551" x2="1124.622" y2="24.551"/>
+	<line fill="none" stroke="#E60006" stroke-miterlimit="10" x1="72.842" y1="0" x2="72.842" y2="25.028"/>
+	<line fill="none" stroke="#333333" stroke-miterlimit="10" x1="8.49" y1="49.638" x2="1124.622" y2="49.638"/>
+	<line fill="none" stroke="#E60006" stroke-miterlimit="10" x1="72.842" y1="25.027" x2="72.842" y2="50.055"/>
+</g>
+<g id="Circulo">
+	<ellipse fill="none" stroke="#333333" stroke-miterlimit="10" cx="34.818" cy="12.536" rx="7.581" ry="7.486"/>
+	<g>
+		<path fill="#4D4D4D" d="M37.946,5.903l-4.386,5.663l-2.761,6.812c-2.299-1.702-2.99-3.47-2.99-6.207
+			c0-3.943,3.144-6.352,6.573-6.813C35.398,5.22,37.075,5.472,37.946,5.903z"/>
+	</g>
+</g>
+</svg>
