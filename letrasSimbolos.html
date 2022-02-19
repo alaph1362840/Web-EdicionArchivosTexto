@@ -43,10 +43,10 @@
                         <a class="nav-link" href="index.html"><i class="far fa-file-alt"></i> Editor Archivos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="numerosLetras.html"><i class="fas fa-sort-numeric-down"></i> Numero a letras</a>
+                        <a class="nav-link" href="numerosLetras.html"><i class="fas fa-sort-numeric-down"></i> Numero a letras</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="letrasSimbolos.html"><i class="fas fa-shield-alt"></i> Letras a simbolos</a>
+                        <a class="nav-link active" href="letrasSimbolos.html"><i class="fas fa-shield-alt"></i> Letras a simbolos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fas fa-door-open"></i> SALIR</a>
@@ -55,38 +55,18 @@
             </div>
         </div>        
     </nav>
-    <div class="container mt-3 pb-2 border border-dark rounded-3 shadow-lg" style="background-color: #e6e1dd;">
-        <h5 class="text-center text-decoration-underline mt-2">Convertir numero a texto.</h5>
+    <div class="container mt-3 pb-2 border border-dark rounded-3 shadow" style="background-color: #e6e1dd;">
+        <h5 class="text-center text-decoration-underline mt-2">Convertir letras a simbolos.</h5>
         <div class="row">
             <div class="form-group col-lg-6">
-                <label for="numero" class="form-label">Ingresa un numero.</label>
-                <input type="text" class="form-control" name="" id="numero" aria-describedby="helpId" placeholder="">
-                <small id="helpId" class="form-text text-muted">Ejemplo: 156.09 o 156,09</small>
-              </div>
-            <div class="form-group col-lg-6">
-                <label for="txtSeparadorDecimal" class="form-label">Seleccione el separador decimal usado.</label>
-                <select id="txtSeparadorDecimal" class="form-select text-center fw-bold " name="">
-                    <option value="." selected>Punto ( . )</option>
-                    <option value=",">Coma ( , )</option>
-                </select>
-            </div>            
+                <label for="numero" class="form-label">Ingresa un texto.</label>
+                <input type="text" class="form-control" name="" id="texto" aria-describedby="helpId" placeholder="">
+                <small id="helpId" class="form-text text-muted">Simplemente escribe un texto y presiona enter para ver el resultado.</small>
+              </div>            
         </div>        
-
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="switchNDecimales">
-            <label class="form-check-label" for="switchNDecimales">Nombrar decimales segun su posicion.</label>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="switchMaysucula">
-            <label class="form-check-label" for="switchMaysucula">Usar letras mayusculas.</label>
-        </div>
         <div class="form-group mb-2">
           <label for="respuesta" class="form-label fw-bold">Resultado:</label>
           <textarea class="form-control" name="" id="respuesta" rows="3" style="background-color: rgb(253, 253, 237);" readonly></textarea>
-        </div>
-        <div class="row form-group ms-1 me-1 mt-1">
-            <button id="btnConvertirNumeros" class="btn btn-success col-lg-5"><i class="fas fa-sync-alt"></i> Convertir numero.</button>
-            
         </div>
     </div>
     
@@ -95,6 +75,6 @@
 	<script src="librerias/jquery-3.6.0.min.js"></script>
     <script src="librerias/popper/popper.min.js"></script>
 	<script src="librerias/bootstrap-5.1.3/js/bootstrap.min.js"></script>
-    <script src="js/numerosLetras.js"></script>
+    <script src="js/letrasSimbolos.js"></script>
 </body>
 </html>
