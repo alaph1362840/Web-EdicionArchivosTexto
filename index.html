@@ -67,7 +67,7 @@
 			<div class="form-group col-lg-5 ps-0 pe-sm-0">
 				<input id="archivo" class="form-control col-12" type="file" name="archivo" data-bs-toggle="tooltip" data-bs-placement="top" title="Debe ser un archivo de texto, extension .txt">
 			</div>
-            <div class="form-group col-lg-2 me-lg-auto" data-bs-toggle="tooltip" data-bs-placement="top" title="Codificacion usada en el archivo subido.">
+            <div class="form-group col-lg-2 me-lg-auto" data-bs-toggle="tooltip" data-bs-placement="top" title="Codificacion de caracteres usada en el archivo subido.">
               <select class="form-select" name="codificacion" id="codificacion">
                 <option value="UTF-8" selected>UTF-8</option>
                 <option value="UTF-16">UTF-16</option>
@@ -75,7 +75,7 @@
               </select>
             </div>
             <div class="form-group col-lg-2 ms-auto p-0">
-                <button id="btnGuardarArchivo" class="btn btn-secondary ms-lg-auto mx-sm-auto d-block col-12" data-bs-toggle="tooltip" data-bs-placement="top" title="Guardara(descargara) el contenido del area de texto en un archivo txt"><i class="far fa-file-alt"></i> Guardar</button>
+                <button id="btnGuardarArchivo" class="btn btn-secondary ms-lg-auto mx-sm-auto d-block col-12" data-bs-toggle="tooltip" data-bs-placement="top" title="Guardara(descargara) el contenido del area de texto en un archivo txt" style="background-color: #a38a77;"><i class="far fa-file-alt"></i> Guardar</button>
             </div>
 		</div>
         <!-- FILA 02 TEXT AREA  CON EL CONTENIDO DEL ARCHIVO -->
@@ -102,7 +102,7 @@
                         <div class="row form-group ms-1 me-1 mt-1">
                             <button id="btnReemplazosMultiples" class="btn btn-success col-lg-5"><i class="fas fa-exchange-alt"></i> Reemplazar Frases</button>
                             <div class="col-2"></div>
-                            <button id="btnInstruccionRM" class="btn btn-secondary col-lg-5 mt-sm-1 mt-lg-0" ><i id="eyeRM" class="far fa-eye-slash"></i> Explicacion</button>
+                            <button id="btnInstruccionRM" class="btn btn-secondary col-lg-5 mt-sm-1 mt-lg-0" style="background-color: #8d8c8b;" ><i id="eyeRM" class="far fa-eye-slash"></i> Explicacion</button>
                         </div>                        
                         <div id="ayudaRM" class="border border-1 border-secondary p-1 mt-1">
                             <p class="mt-0 mb-0 fw-bold">Formato a usar en archivo el archivo con frases a reemplazar: </p>
@@ -144,7 +144,7 @@
                         <div class="row form-group ms-1 me-1 mt-1">
                             <button id="btnConvertirNumeros" class="btn btn-success col-lg-5"><i class="fas fa-sync-alt"></i> Convertir numeros</button>
                             <div class="col-2"></div>
-                            <button id="btnInstruccionCN" class="btn btn-secondary col-lg-5 mt-sm-1 mt-lg-0" ><i id="eyeCN" class="far fa-eye-slash"></i> Explicacion</button>
+                            <button id="btnInstruccionCN" class="btn btn-secondary col-lg-5 mt-sm-1 mt-lg-0" style="background-color: #8d8c8b;" ><i id="eyeCN" class="far fa-eye-slash"></i> Explicacion</button>
                         </div>
                         <div id="ayudaCN" class="border border-1 border-secondary p-1 mt-1">
                             <p class="mb-0">Se cambiaran los numeros por su representacion en letras. Ejemplo:</p>
@@ -156,7 +156,7 @@
             </div>            
         </div>
         <!-- FILA 04 CORRECCION DE PUNTOS -->
-        <div class="row mt-2">
+        <div class="row my-2">
             <div class="col-lg-6 ps-lg-0">
                 <div class="card">
                     <div class="card-header">

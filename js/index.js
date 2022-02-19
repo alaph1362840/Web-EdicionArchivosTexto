@@ -14,10 +14,17 @@ class ArchivoTxt{
         this.nombreArchivo="descarga.txt";
     }
     addEspacioPuntos(){
+        var contadorCambios = 0;
         this.texto = this.texto.replace(this.exrPuntos, (coincidencia, indice, cadena)=>{
             let res = ""+cadena.charAt(indice) + cadena.charAt(indice+1)+" "+cadena.charAt(indice+2);
+            contadorCambios++;
             return res;
-        });        
+        });
+        if (contadorCambios > 0) {
+            alertify.success("Cambios Realizados: "+ contadorCambios);
+        }else{
+            alertify.warning('No se encontraron coincidencias.'); 
+        }         
         return this.texto;
     }
     guardarArchivo(){
@@ -26,27 +33,47 @@ class ArchivoTxt{
         saveAs(blob, this.nombreArchivo);        
     }
     reemplazarLista(texto, separador){
+        var contadorCambios = 0;
+        var centi = "";
         let arrTexto = texto.split('\n');//divide el texto en un arreglo por lineas de archivo(salto de linea)
         let arrCenti = [];//arreglo que se forma al separar la linea con un el sepadarador
-        
-        arrTexto.forEach(element => {
-            //let elementV = element.replace(/(\r\n|\n|\r)/gm,"");//Elimina todos los saltos de linea.            
-            let elementV = element.trim();//Elimina todos los saltos de linea.
-            arrCenti = elementV.split(separador);
-            switch (arrCenti.length) {
-                case 1:
-                    this.texto = this.texto.replaceAll(arrCenti[0], "");
-                    break;
-                case 2:
-                    this.texto = this.texto.replaceAll(arrCenti[0], arrCenti[1]);
-                    break;
-                default:
-                    break;
-            }           
-        });
+        if (texto.length>0) {
+            arrTexto.forEach(element => {
+                //let elementV = element.replace(/(\r\n|\n|\r)/gm,"");//Elimina todos los saltos de linea.            
+                let elementV = element.trim();//Elimina todos los saltos de linea.
+                arrCenti = elementV.split(separador);
+                switch (arrCenti.length) {
+                    case 1:
+                        centi = this.texto.replaceAll(arrCenti[0], "");
+                        if (centi != this.texto) {
+                            contadorCambios++;
+                            this.texto = centi;
+                        }                    
+                        break;
+                    case 2:
+                        centi = this.texto.replaceAll(arrCenti[0], arrCenti[1]);
+                        if (centi != this.texto) {
+                            contadorCambios++;
+                            this.texto = centi;
+                        }
+                        break;
+                    default:
+                        break;
+                }           
+            });
+            if (contadorCambios > 0) {
+                alertify.success("Cambios Realizados: "+ contadorCambios);
+            }else{
+                alertify.warning('No se encontraron coincidencias.'); 
+            }
+        } else {
+            alertify.error('Debe subir un archivo con el texto a reemplazar.'); 
+        }
+           
         return this.texto;
     }
     numerosALetras(separadorDecimal, NDPosicion, mayusculas){
+        var contadorCambios = 0;
         let sepDecimal = '';
         let sepMiles = '';
         if (separadorDecimal=='.') {
@@ -65,9 +92,15 @@ class ArchivoTxt{
                 res = this.convertirNumero(coincidencia,separadorDecimal,NDPosicion); 
             } else {
                 res = this.convertirNumero(coincidencia,separadorDecimal,NDPosicion).toLowerCase();
-            }            
+            }
+            contadorCambios++;            
             return res;
-        });  
+        });
+        if (contadorCambios > 0) {
+            alertify.success("Cambios Realizados: "+ contadorCambios);
+        }else{
+            alertify.warning('No se encontraron coincidencias.'); 
+        }   
         return this.texto;
     }
     //Metodos basicos para la conversion de numeros a letras.
