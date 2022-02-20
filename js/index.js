@@ -312,8 +312,7 @@ function cargarArchivo(e) {
         if (file) { //este if verifica que el archivo exista
             //---LECTURA DE ARCHIVO---
             let reader = new FileReader();
-            let codi = $("#codificacion").val();
-            reader.readAsText(file, codi);
+            let codi = $("#codificacion").val();            
             reader.onload = function (e) {
                 let texto = e.target.result;  
                 textoArchivo = texto;
@@ -321,7 +320,7 @@ function cargarArchivo(e) {
                 $("#txtArchivo").trigger("change");
                 cArchivo.nombreArchivo = nombreArchivo;       
             }
-            reader.readAsText(file);            
+            reader.readAsText(file, codi);          
         } else {
             alertify.error('Debes seleccionar un archivo de texto para trabajar.');
         }
