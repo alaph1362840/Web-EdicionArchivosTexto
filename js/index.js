@@ -401,8 +401,7 @@ $("#btnGuardarArchivo").click(function () {
 
 //----- REEMPLAZOS ----
 $("#btnReemplazosMultiples").click(function () {
-    $("#txtArchivo").val(cArchivo.reemplazarLista(textoReemplazo, separador));
-        
+    $("#txtArchivo").val(cArchivo.reemplazarLista(textoReemplazo, separador));        
 });
 
 //------ CONVERTIR NUMEROS A LETRAS ------------
@@ -419,4 +418,41 @@ $("#btnConvertirNumeros").click(function () {
     $("#txtArchivo").val(cArchivo.numerosALetras(separador, NDPosicion, mayusculas));
        
 });
+
+// ----------------- PROGRAMACION DEL BUSCADOR --------------------------
+var indiceBusquedad = 0;
+/**
+ * @param {string} idTextArea id del area de texto 
+ * @param {string} textBuscar texto que se buscara en el area de texto
+ * @param {int} indice indice en le que se comenzara a buscar.
+ * @returns int  iinicio  es la posicion donde se encontro la cadena buscada.
+ */
+ function buscarEnTextarea(idTextArea, textBuscar, indice){
+    var areaTexto = document.getElementById(idTextArea);
+    var tarea = $("#"+idTextArea).val();
+    var tbuscar = textBuscar;
+    var iinicio = tarea.indexOf(tbuscar,indice);
+    var ifin = iinicio + tbuscar.length;
+    if (iinicio >= 0) {
+      areaTexto.focus();
+      $("#"+idTextArea).val(tarea.substring(0, ifin));//deja el text area con solo el texto asta la coincidencia.
+      areaTexto.scrollTop = areaTexto.scrollHeight; //hace un scroll asta la altura del texto donde se encuentra la frase buscada
+      $("#"+idTextArea).val(tarea);//vuelve a llenar el textarea
+      areaTexto.setSelectionRange(iinicio, ifin);//selecciona el texto entre la posicion inicial y final dadas como parametro.
+    }else{
+      iinicio = 0;
+      areaTexto.scrollTop =0;
+    }
+    return iinicio;
+  }  
+  
+  $("#btnBuscar").click(function () {
+    var texto =$("#txtBuscar").val();
+    var idTextArea = "txtArchivo";
+    indiceBusquedad = buscarEnTextarea(idTextArea, texto, indiceBusquedad) + 1;
+  });
+  
+  $("#txtBuscar").change(function () {
+    indiceBusquedad = 0;  
+  });
  
