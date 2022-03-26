@@ -17,7 +17,8 @@
     <!-- MIS CSS -->
     <link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/tipografia.css">  
+    <link rel="stylesheet" href="css/tipografia.css">
+    <link rel="stylesheet" href="css/generales.css">  
 
 </head>
 <body >
@@ -26,8 +27,7 @@
             <img src="img/Logo.svg" class="mx-auto d-block" alt="logo" style="width:40px;">
             <h4 class="mb-0 pb-0 tituloSuperior">BDAC SOFTWARE</h4> 
         </a> 
-    </div>
-     
+    </div>     
 	<!-- BARRA DE NAVEGACION -->
     <nav class="navbar navbar-expand-md navbar-light bg-light barraNavegacion mt-0 pt-0 ">
         <div class="container-fluid">
@@ -64,7 +64,7 @@
     <!-- CONTENIDO -->
 	<div class="container mt-4">
         <!-- FILA 01 IMPORTACION DE ARCHIVO -->
-		<div class="row align-items-center">
+		<div class="row ">
 			<div class="form-group col-lg-5 col-sm-10 ps-0 pe-sm-0 ">
 				<input id="archivo" class="form-control col-12" type="file" name="archivo" data-bs-toggle="tooltip" data-bs-placement="top" title="Debe ser un archivo de texto, extension .txt">
 			</div>
@@ -81,14 +81,49 @@
             <div class="col-lg-1 col-sm-2 px-0">
                 <button id="btnBuscar" type="button" class="btn btn-primary me-auto w-75" style="background-color: rgb(188, 217, 226);"><i class="fab fa-searchengin"></i></button>
             </div>
-            <div class="form-group col-lg-2 ms-auto p-0">
-                <button id="btnGuardarArchivo" class="btn btn-secondary ms-lg-auto mx-sm-auto d-block col-12" data-bs-toggle="tooltip" data-bs-placement="top" title="Descargara el contenido del area de texto en un archivo txt - UTF-8" style="background-color: #a38a77;"><i class="far fa-file-alt"></i> Guardar</button>
+            <div class="row form-group col-lg-2">
+                <button id="btnGuardarArchivo" class="btn btn-secondary col-9" data-bs-toggle="tooltip" data-bs-placement="top" title="Descargara el contenido del area de texto en un archivo txt - UTF-8" style="background-color: #a38a77;"><i class="far fa-file-alt"></i> Guardar</button>
+                <div id="btnMasOpciones" class="boton oColor col-3 btn"><i id="iconoMas" class="fas fa-plus"></i></div>
             </div>
 		</div>
         <!-- FILA 02 TEXT AREA  CON EL CONTENIDO DEL ARCHIVO -->
         <div class="row form-group mt-1">
             <textarea id="txtArchivo" class="form-control pt-0" name="" rows="8"></textarea>
         </div>
+        <!-- GUARDADO ESPECIAL -->
+        <div id="masOpciones" class="row detalles p-1">
+            <div class="row col-lg-4">
+                <div class="col-lg-5">
+                    <label for="txtNombre" class="col-form-label">Nombre Novela:</label>
+                </div>
+                <div class="col-lg-7">
+                    <input type="text" class="form-control" id="txtNombre" placeholder="">
+                </div>                
+            </div>
+            <div class="row col-lg-3 ">
+                <div class="col-lg-6 text-lg-end">
+                    <label for="txtNoCapitulo" class="col-form-label">No.Capitulo:</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="number" class="form-control" id="txtNoCapitulo" min="0" max="20000" value="1" step="1">
+                </div>                
+            </div>
+            <div class="row col-lg-3 ms-lg-auto mt-sm-1 mt-lg-0">
+                <div class="col-lg-4 col-sm-4 ">
+                    <button id="btnCopy" class="btn btn-secondary form-control "><i class="far fa-copy"></i></button>
+                </div>
+                <div class="col-lg-4 col-sm-4 ">
+                    <button id="btnCut" class="btn btn-secondary form-control"><i class="fas fa-cut"></i></button>
+                </div>
+                <div class="col-lg-4 col-sm-4 me-0">
+                    <button id="btnLimpiar" class="btn btn-secondary form-control"><i class="fas fa-trash-alt"></i></button>
+                </div>                               
+            </div>
+            <div class="col-lg-2 mt-sm-1 mt-lg-0">
+                <div id="btnGuardarCap" class="boton form-control text-center " ><i class="far fa-file-alt"></i> &nbsp; Guardar</div>
+            </div>
+
+        </div>        
         <!-- FILA 03 REEMPLAZOS MULTIPLES Y CONVERSION DE NUMEROS A LETRAS -->
         <div class="row mt-2">
             <div class="col-lg-6 ps-lg-0">

@@ -455,4 +455,67 @@ var indiceBusquedad = 0;
   $("#txtBuscar").change(function () {
     indiceBusquedad = 0;  
   });
- 
+
+// -------- LIMPIAR CAMPO DE TEXTO ------
+$("#btnLimpiar").click(function () {
+    $("#txtArchivo").val("");      
+});
+
+// -------- CORTAR TEXTO DE TEXTAREA ------
+$("#btnCut").click(function () {
+    var t = $("#txtArchivo").val();
+    if (t!="") {
+        var content = document.getElementById('txtArchivo');    
+        content.select();
+        document.execCommand('cut');
+        alertify.success("texto cortado exitosamente!"); 
+    } else {
+        alertify.warning('No hay texto para cortar.');
+    }       
+});
+
+
+// -------- COPIAR TEXTO DE TEXTAREA ------
+$("#btnCopy").click(function () {
+    var t = $("#txtArchivo").val();
+    if (t!="") {
+        var content = document.getElementById('txtArchivo');    
+        content.select();
+        document.execCommand('copy');
+        alertify.success("texto copiado exitosamente!"); 
+    } else {
+        alertify.warning('No hay texto para copiar.');
+    }       
+});
+
+// GUARDADO ESPECIAL POR CAPITULO:
+// VARIABLES:
+var textoC = "";
+var nombreNovelaC = "";
+var noCapituloC = 0;
+var nombreArchivoC= "";
+
+$("#btnGuardarCap").click(function () { 
+    textoC = $("#txtArchivo").val();
+    nombreNovelaC = $("#txtNombre").val();
+    noCapituloC = parseInt($("#txtNoCapitulo").val(), 10);
+    if (nombreNovelaC != "") {
+        nombreArchivoC = nombreNovelaC + " " + noCapituloC + ".txt"; 
+    } else {
+        nombreArchivoC = noCapituloC + ".txt";
+    }    
+    //guardado
+    var blob = new Blob([textoC], {type:'text/plain',endings:'native'});
+    saveAs(blob, nombreArchivoC);
+    noCapituloC = noCapituloC + 1;
+    $("#txtNoCapitulo").val(noCapituloC);
+});
+
+$("#masOpciones").hide();
+$("#btnMasOpciones").click(function () {
+    $("#masOpciones").toggle();
+    $("#iconoMas").toggleClass("fa-plus");
+    $("#iconoMas").toggleClass("fa-minus");
+    $("#btnMasOpciones").toggleClass("oColor");
+    $("#btnMasOpciones").toggleClass("oColorm");     
+});

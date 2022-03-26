@@ -25,3 +25,32 @@ body{
     line-height: 25px;
     padding-left: 90px;
 }
+
+.detalles{
+    margin-top: 0px;
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #f8f2e2;
+    border-color: rgb(209, 174, 131);
+}
+
+#btnGuardarCap{
+    background-color: rgb(192, 162, 126); 
+    color: rgb(255, 255, 255);
+}
+
+#btnMasOpciones{    
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(66, 58, 40);
+}
+
+.oColor{
+    background-color: rgb(203, 218, 176);
+}
+.oColorm{
+    background-color: rgb(219, 173, 134);
+}

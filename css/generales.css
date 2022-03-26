@@ -1,0 +1,14 @@
+.boton{
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+.boton:hover{
+    opacity: 90%;
+    transform: scale(1.02, 1.02);
+}
+
+.boton:active{
+    transform: scale(1, 1);
+}
