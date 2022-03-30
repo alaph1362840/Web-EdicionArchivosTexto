@@ -44,11 +44,24 @@ class ArchivoTxt{
     }
     quitarTextoEntreFrases(f1,f2,inluirFs){
         var exrFrases = "";
-        if (inluirFs) {
-            exrFrases = f1+'([\\s\\S]*?)'+f2;
-        } else {
-            exrFrases = '(?<=' + f1+')([\\s\\S]*?)(?='+f2+')';
+        switch (inluirFs) {
+            case -1:
+                exrFrases = '(?<=' + f1+')([\\s\\S]*?)(?='+f2+')';
+                break;
+            case 1:
+                exrFrases = f1+'([\\s\\S]*?)(?='+f2+')';
+                break;
+            case 2:
+                exrFrases = '(?<=' + f1+')([\\s\\S]*?)'+f2;
+                break;
+            case 3:
+                exrFrases = f1+'([\\s\\S]*?)'+f2;
+                break;
+        
+            default:
+                break;
         }
+        
         var exrFrasesV = new RegExp(exrFrases,'g');
         this.texto = this.texto.replaceAll(exrFrasesV,"");
         return this.texto;
@@ -551,6 +564,6 @@ $("#btnClean").click(function () {
 $("#btnEliminarTextoMedio").click(function () { 
     var f1 = $("#txtFrase01").val();
     var f2 = $("#txtFrase02").val();
-    var inluirFs = $('#switchIncluirFrases').prop('checked');
+    var inluirFs = parseInt($("#listEliminacion").val());
     $("#txtArchivo").val(cArchivo.quitarTextoEntreFrases(f1,f2,inluirFs));
 });

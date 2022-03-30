@@ -239,16 +239,30 @@
                         <div class="row">
                             <div class="form-group col-lg-6">
                               <label for="txtFrase01">Frase Inicial.</label>
-                              <input type="text" id="txtFrase01" class="form-control" >
+                              <input list="listaFrases01" type="text" id="txtFrase01" class="form-control" >
+                              <!-- <datalist id="listaFrases01">
+                                <option value="PENSAMIENTOS DE LOS CREADORES">
+                                <option value="COMENTARIO">
+                              </datalist> -->
                             </div>
                             <div class="form-group col-lg-6">
                               <label for="txtFrase02">Frase Final.</label>
-                              <input type="text" id="txtFrase02" class="form-control" >
+                              <input list="listaFrases02" type="text" id="txtFrase02" class="form-control" >
+                              <!-- <datalist id="listaFrases02">
+                                <option value="VOTAR">
+                                <option value="Chapter">
+                              </datalist> -->
                             </div>
                         </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="switchIncluirFrases">
-                            <label class="form-check-label" for="switchIncluirFrases">Incluir frases al eliminar.</label>
+
+                        <div class="form-group">
+                          <label for="">Se eliminaran la frase inicial y final?</label>
+                          <select class="form-control form-select" name="" id="listEliminacion">
+                            <option value="-1">No eliminar frases.</option>
+                            <option value="1">Eliminar solo la Frase Inicial.</option>
+                            <option value="2">Eliminar solo la Frase Final.</option>
+                            <option value="3">Eliminar las dos frases.</option>
+                          </select>
                         </div>
                         <p class="mb-0">Elimina todo el texto entre la frase inicial y la frase final. </p> 
                         <button id="btnEliminarTextoMedio" class="btn btn-success"><i class="fas fa-sync"></i> Eliminar texto entre frases. </button>
