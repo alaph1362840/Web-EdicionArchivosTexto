@@ -92,6 +92,7 @@
         </div>
         <!-- GUARDADO ESPECIAL -->
         <div id="masOpciones" class="row detalles p-1">
+            <!-- Nombre de novela -->
             <div class="row col-lg-4">
                 <div class="col-lg-5">
                     <label for="txtNombre" class="col-form-label">Nombre Novela:</label>
@@ -100,6 +101,7 @@
                     <input type="text" class="form-control" id="txtNombre" placeholder="">
                 </div>                
             </div>
+            <!-- No de Capitulo -->
             <div class="row col-lg-3 ">
                 <div class="col-lg-6 text-lg-end">
                     <label for="txtNoCapitulo" class="col-form-label">No.Capitulo:</label>
@@ -108,13 +110,14 @@
                     <input type="number" class="form-control" id="txtNoCapitulo" min="0" max="20000" value="1" step="1">
                 </div>                
             </div>
+            <!-- Botones de Copy Delete y Clean -->
             <div class="row col-lg-3 ms-lg-auto mt-sm-1 mt-lg-0">
                 <div class="col-lg-4 col-sm-4 ">
-                    <button id="btnCopy" class="btn btn-secondary form-control "><i class="far fa-copy"></i></button>
+                    <button id="btnClean" class="btn btn-secondary form-control"><i class="fas fa-broom"></i></button>
                 </div>
                 <div class="col-lg-4 col-sm-4 ">
-                    <button id="btnCut" class="btn btn-secondary form-control"><i class="fas fa-cut"></i></button>
-                </div>
+                    <button id="btnCopy" class="btn btn-secondary form-control "><i class="far fa-copy"></i></button>
+                </div>                
                 <div class="col-lg-4 col-sm-4 me-0">
                     <button id="btnLimpiar" class="btn btn-secondary form-control"><i class="fas fa-trash-alt"></i></button>
                 </div>                               
@@ -122,7 +125,6 @@
             <div class="col-lg-2 mt-sm-1 mt-lg-0">
                 <div id="btnGuardarCap" class="boton form-control text-center " ><i class="far fa-file-alt"></i> &nbsp; Guardar</div>
             </div>
-
         </div>        
         <!-- FILA 03 REEMPLAZOS MULTIPLES Y CONVERSION DE NUMEROS A LETRAS -->
         <div class="row mt-2">
@@ -212,7 +214,18 @@
                     </div>
                 </div>
             </div>
-                      
+            <div class="col-lg-6 mt-md-0 mt-sm-1 pe-lg-0">
+                <div class="card">
+                    <div class="card-header">
+                        Quitar saltos de linea exesivos.
+                    </div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Title</h5> -->
+                        <p class="mb-0">Si hay 3 o mas saltos de linea entre parrafo y parrafo los eliminara y solo dejara dos saltos de linea maximo.</p>
+                        <button id="btnQuitarEspacios" class="btn btn-success"><i class="fas fa-sync"></i> Quitar Saltos de Linea</button>
+                    </div>
+                </div>
+            </div>          
         </div>
 	</div>
 	

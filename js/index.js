@@ -10,6 +10,7 @@ class ArchivoTxt{
     constructor(texto) {
         //-- EXPRESIONES REGULARES ---
         this.exrPuntos= /[a-zA-Z]\.[a-zA-Z]/g;
+        this.exrSaltos= /\n\n\n+/g;
         this.texto = texto;
         this.nombreArchivo="descarga.txt";
     }
@@ -27,6 +28,22 @@ class ArchivoTxt{
         }         
         return this.texto;
     }
+
+    quitarSaltosLineaM(){
+        var contadorCambios = 0;
+        this.texto = this.texto.replace(this.exrSaltos, (coincidencia, indice, cadena)=>{
+            let res = "\n\n";
+            contadorCambios++;
+            return res;
+        });
+        if (contadorCambios > 0) {
+            alertify.success("Saltos de linea eliminados: "+ contadorCambios);
+        }else{
+            alertify.warning('No se encontraron saltos de linea extra.'); 
+        }         
+        return this.texto;
+    }
+
     guardarArchivo(){
         //let textoGuardar = this.texto.replace(/\n/g, "\r\n"); //Es para que los saltos de linea se muestren.
         var blob = new Blob([this.texto], {type:'text/plain',endings:'native'});
@@ -461,20 +478,6 @@ $("#btnLimpiar").click(function () {
     $("#txtArchivo").val("");      
 });
 
-// -------- CORTAR TEXTO DE TEXTAREA ------
-$("#btnCut").click(function () {
-    var t = $("#txtArchivo").val();
-    if (t!="") {
-        var content = document.getElementById('txtArchivo');    
-        content.select();
-        document.execCommand('cut');
-        alertify.success("texto cortado exitosamente!"); 
-    } else {
-        alertify.warning('No hay texto para cortar.');
-    }       
-});
-
-
 // -------- COPIAR TEXTO DE TEXTAREA ------
 $("#btnCopy").click(function () {
     var t = $("#txtArchivo").val();
@@ -518,4 +521,19 @@ $("#btnMasOpciones").click(function () {
     $("#iconoMas").toggleClass("fa-minus");
     $("#btnMasOpciones").toggleClass("oColor");
     $("#btnMasOpciones").toggleClass("oColorm");     
+});
+
+//---- QUITAR SALTOS DE LINEA ----
+$("#btnQuitarEspacios").click(function () {
+    $("#txtArchivo").val(cArchivo.quitarSaltosLineaM());              
+});
+
+// ------- LIMPIEZA GENERAL --------
+$("#btnClean").click(function () {
+    //Reemplazos Multiples
+    $("#txtArchivo").val(cArchivo.reemplazarLista(textoReemplazo, separador)); 
+    //Agregar espacio despues de puntos sin espacio
+    $("#txtArchivo").val(cArchivo.addEspacioPuntos());
+    //Quitar saltos de linea excesivos
+    $("#txtArchivo").val(cArchivo.quitarSaltosLineaM()); 
 });
