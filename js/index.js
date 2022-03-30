@@ -28,7 +28,6 @@ class ArchivoTxt{
         }         
         return this.texto;
     }
-
     quitarSaltosLineaM(){
         var contadorCambios = 0;
         this.texto = this.texto.replace(this.exrSaltos, (coincidencia, indice, cadena)=>{
@@ -43,7 +42,17 @@ class ArchivoTxt{
         }         
         return this.texto;
     }
-
+    quitarTextoEntreFrases(f1,f2,inluirFs){
+        var exrFrases = "";
+        if (inluirFs) {
+            exrFrases = f1+'([\\s\\S]*?)'+f2;
+        } else {
+            exrFrases = '(?<=' + f1+')([\\s\\S]*?)(?='+f2+')';
+        }
+        var exrFrasesV = new RegExp(exrFrases,'g');
+        this.texto = this.texto.replaceAll(exrFrasesV,"");
+        return this.texto;
+    }
     guardarArchivo(){
         //let textoGuardar = this.texto.replace(/\n/g, "\r\n"); //Es para que los saltos de linea se muestren.
         var blob = new Blob([this.texto], {type:'text/plain',endings:'native'});
@@ -536,4 +545,12 @@ $("#btnClean").click(function () {
     $("#txtArchivo").val(cArchivo.addEspacioPuntos());
     //Quitar saltos de linea excesivos
     $("#txtArchivo").val(cArchivo.quitarSaltosLineaM()); 
+});
+
+//------- ELIMINAR TEXTO ENTRE DOS FRASES -------------
+$("#btnEliminarTextoMedio").click(function () { 
+    var f1 = $("#txtFrase01").val();
+    var f2 = $("#txtFrase02").val();
+    var inluirFs = $('#switchIncluirFrases').prop('checked');
+    $("#txtArchivo").val(cArchivo.quitarTextoEntreFrases(f1,f2,inluirFs));
 });
